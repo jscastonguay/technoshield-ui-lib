@@ -23,9 +23,6 @@ class Technoshield_ui : public Adafruit_LiquidCrystal {
 	private:
 	Adafruit_MCP23008 ledButton;
   uint8_t ledButtonAddress;
-  
-  static constexpr uint8_t ledPinmux[NB_OF_LED] = { 2, 1, 0};
-  static constexpr uint8_t butPinmux[NB_OF_BUTTONS] = { 7, 6, 5, 4, 3};
 };
 
 #endif
