@@ -1,7 +1,6 @@
-#include <Technoshield-ui.h>
+#include <Technoshield_ui.h>
 
-Technoshield_ui ui(0, 0);
-//Adafruit_LiquidCrystal ui(0);
+Technoshield_ui ui(JUMPER_OPEN, JUMPER_OPEN, JUMPER_OPEN, JUMPER_OPEN);
 
 unsigned long timeout = 0;
 
@@ -12,15 +11,34 @@ void setup() {
 
 void loop() {
 
+  // Print the number of seconds since reset:
   if (millis() > timeout + 1000) {
     ui.setCursor(0, 1);
-    // print the number of seconds since reset:
     ui.print(millis() / 1000);
   }
 
-  ui.setLedState(1, ui.isButtonPressed(1));
-  ui.setLedState(2, ui.isButtonPressed(2));
-  ui.setLedState(3, ui.isButtonPressed(3));
+  // Turn-on LED or backlight according to buttons 1 to 4.
+  if (ui.isButtonPressed(1)) {
+    ui.setLedState(1, true);
+  }
 
-  ui.setBacklight(ui.isButtonPressed(4));
+  if (ui.isButtonPressed(2)) {
+    ui.setLedState(2, true);
+  }
+
+  if (ui.isButtonPressed(3)) {
+    ui.setLedState(3, true);
+  }
+
+  if (ui.isButtonPressed(4)) {
+    ui.setBacklight(true);
+  }
+
+  // Turn-off everything.
+  if (ui.isButtonPressed(5)) {
+    for (int i = 1; i <= NB_OF_LED; i++) {
+      ui.setLedState(i, false);
+    }
+    ui.setBacklight(false);
+  }
 }
