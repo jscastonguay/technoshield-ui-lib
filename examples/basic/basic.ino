@@ -1,3 +1,11 @@
+/* Technoshield basic example.
+ *  
+ * The button 1 to 3 (SW1 to SW3) turn on a LED, the button 4 (SW4) turn on
+ * the LCD backlight while the button 5 (SW5) turn off the LED and the backlight.
+ * 
+ * Note that in this example all I2C Addr jumpers are opened.
+ */
+
 #include <Technoshield_ui.h>
 
 Technoshield_ui ui(JUMPER_OPEN, JUMPER_OPEN, JUMPER_OPEN, JUMPER_OPEN);
