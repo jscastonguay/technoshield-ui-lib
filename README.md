@@ -7,7 +7,7 @@ It is based on two libraries devepped by Adafruit which are
 - [Adafruit MCP23008 library](https://github.com/adafruit/Adafruit-MCP23008-library)
 
 Both are already included in the Technoshield User Interface SW Library.
-See the folling link for further details: [Technoshield Hackaday project](https://hackaday.io/project/21892-technoshield-user-interface)
+See the following link for further details: [Technoshield Hackaday project](https://hackaday.io/project/21892-technoshield-user-interface)
 
 ## Installation
 
@@ -42,7 +42,7 @@ Note that the creation can be done also as follows:
 Technoshield_ui ui(0, 0);
 ```
 
-where the parameters correspond to the I2C subaddresses made by the jumers' states instead of the states as is.
+where the parameters correspond to the I2C subaddresses (0 to 3) made by the jumers' states. Install a jumper sets VCC to the corresponding subaddress pins. So, the subaddress is 0 if both `LCD A1` and `LCD A0` are opened, is 1 if `LCD A1` is opened but `LCD A0` closed, and so on.
 
 Finally, if the jumpers' states are open (meaning 0 as I2C subaddress for both LCD and Buttons/LED), the following can be used:
 
@@ -50,7 +50,7 @@ Finally, if the jumpers' states are open (meaning 0 as I2C subaddress for both L
 Technoshield_ui ui;
 ```
 
-When the user interface object has been created, it must be initiated in the `setup` function as follows:
+When the user interface object has been created, it must be initialised in the `setup` function as follows:
 
 ```Arduino
 void setup() {
@@ -75,19 +75,19 @@ See the [SD Library](https://www.arduino.cc/en/reference/SD) for further details
 
 ### Buttons and LED
 
-The following functions are added to drive the buttons and the LED.
+The following functions can be used to drive the buttons and the LED.
 
 __isButtonPressed(button)__
 
-This function returns true if a given `button` is pressed from 1 (the button named SW1) to 5 (the button named SW5).
+This function returns `true` if a given `button` is pressed. `button` is from 1 (the button named SW1) to 5 (the button named SW5).
 
 __setLedState(led, state)__
 
-This function turn on and off a given LED from 1 (the LED named D1) to 3 (the LED named D3). The state can be 0, 1, `false`, `true`, `LOW`, `HIGH`, etc.
+This function turns on and off a given `LED`. `LED` is from 1 (the LED named D1) to 3 (the LED named D3). The `state` can be 0, 1, `false`, `true`, `LOW`, `HIGH`, etc.
 
 ## Example
 
-Here is a basic example. The button 1 to 3 (SW1 to SW3) turn on a LED, the button 4 (SW4) turn on the LCD backlight while the button 5 (SW5) turn off the LED and the backlight. Note that in this example all I2C Addr jumpers are opened.
+Here is a basic example. The buttons 1 to 3 (SW1 to SW3) turn on one of LED, the button 4 (SW4) turn on the LCD backlight while the button 5 (SW5) turn off the LED and the backlight. Note that in this example all I2C Addr jumpers are opened.
 
 ```Arduino
 #include <Technoshield_ui.h>
