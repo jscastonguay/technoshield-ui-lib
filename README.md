@@ -105,6 +105,7 @@ void loop() {
 
   // Print the number of seconds since reset:
   if (millis() > timeout + 1000) {
+    timeout = millis();
     ui.setCursor(0, 1);
     ui.print(millis() / 1000);
   }
