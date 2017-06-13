@@ -11,7 +11,7 @@ See the following link for further details: [Technoshield Hackaday project](http
 
 ## Installation
 
-Follow this [instruction](https://www.arduino.cc/en/guide/libraries).
+Follow this [instruction](https://www.arduino.cc/en/guide/libraries) and look for *technoshield*.
 
 ## Application Programming Interface (API)
 
