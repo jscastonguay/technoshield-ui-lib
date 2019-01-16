@@ -42,7 +42,7 @@ Note that the creation can be done also as follows:
 Technoshield_ui ui(0, 0);
 ```
 
-where the parameters correspond to the I2C subaddresses (0 to 3) made by the jumers' states. Install a jumper sets VCC to the corresponding subaddress pins. So, the subaddress is 0 if both `LCD A1` and `LCD A0` are opened, is 1 if `LCD A1` is opened but `LCD A0` closed, and so on.
+where the parameters correspond to the I2C subaddresses (0 to 3) made by the jumers' states. Installing a jumper sets VCC to the corresponding subaddress pins. So, the subaddress is 0 if both `LCD A1` and `LCD A0` are opened, is 1 if `LCD A1` is opened but `LCD A0` closed, and so on.
 
 Finally, if the jumpers' states are open (meaning 0 as I2C subaddress for both LCD and Buttons/LED), the following can be used:
 
@@ -50,7 +50,7 @@ Finally, if the jumpers' states are open (meaning 0 as I2C subaddress for both L
 Technoshield_ui ui;
 ```
 
-When the user interface object has been created, it must be initialised in the `setup` function as follows:
+After the user interface object has been created, it must be initialised in the `setup` function as follows:
 
 ```Arduino
 void setup() {
