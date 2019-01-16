@@ -44,7 +44,7 @@ Technoshield_ui ui(0, 0);
 
 where the parameters correspond to the I2C subaddresses (0 to 3) made by the jumers' states. Installing a jumper sets VCC to the corresponding subaddress pins. So, the subaddress is 0 if both `LCD A1` and `LCD A0` are opened, is 1 if `LCD A1` is opened but `LCD A0` closed, and so on.
 
-Finally, if the jumpers' states are open (meaning 0 as I2C subaddress for both LCD and Buttons/LED), the following can be used:
+Finally, if all jumpers' states are open (meaning 0 as I2C subaddress for both LCD and Buttons/LED), the following can be used:
 
 ```Arduino
 Technoshield_ui ui;
