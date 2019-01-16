@@ -70,7 +70,7 @@ Almost all functions of the standard Arduino Liquid Crystal library are supporte
 
 See the [LiquidCrystal](https://www.arduino.cc/en/Reference/LiquidCrystal) library for further details.
 
-For SD card usage, use the standard SD library.
+For SD card usage, use the standard SD library. Note that the SD card *Slave Select* is connected to the Arduino's pin 10.
 See the [SD Library](https://www.arduino.cc/en/reference/SD) for further details.
 
 ### Buttons and LED
