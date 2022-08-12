@@ -17,11 +17,11 @@ void Technoshield_ui::begin() {
   Adafruit_LiquidCrystal::begin( 16, 2);
   ledButton.begin( ledButtonAddress);
   
-  for (int i = 0; i < NB_OF_LED; i++) {
+  for (uint8_t i = 0; i < NB_OF_LED; i++) {
     ledButton.pinMode( LED_PINMUX[i], OUTPUT);
   }
   
-  for (int i = 0; i < NB_OF_BUTTONS; i++) {
+  for (uint8_t i = 0; i < NB_OF_BUTTONS; i++) {
     ledButton.pinMode( BUT_PINMUX[i], INPUT);
     ledButton.pullUp( BUT_PINMUX[i], true);
   }
