@@ -3,12 +3,12 @@
 constexpr uint8_t Technoshield_ui::LED_PINMUX[NB_OF_LED];
 constexpr uint8_t Technoshield_ui::BUT_PINMUX[NB_OF_BUTTONS];
   
-Technoshield_ui::Technoshield_ui( unsigned int lcdA1, unsigned int lcdA0, unsigned int butLedA1, unsigned int butLedA0) :
+Technoshield_ui::Technoshield_ui( uint8_t lcdA1, uint8_t lcdA0, uint8_t butLedA1, uint8_t butLedA0) :
   Adafruit_LiquidCrystal( ((lcdA1 & 1) << 1) + (lcdA0 & 1)),
   ledButtonAddress( MCP23008_ADDRESS + BUT_LED_MCP23008_ADDR_OFFSET + ((butLedA1 & 1) << 1) + (butLedA0 & 1)) {
 }
 
-Technoshield_ui::Technoshield_ui( unsigned int ldcSubAddr, unsigned int butLedSubAddr) :
+Technoshield_ui::Technoshield_ui( uint8_t ldcSubAddr, uint8_t butLedSubAddr) :
   Adafruit_LiquidCrystal( ldcSubAddr),
   ledButtonAddress( MCP23008_ADDRESS + BUT_LED_MCP23008_ADDR_OFFSET + butLedSubAddr) {
 }
