@@ -13,8 +13,8 @@
 class Technoshield_ui : public Adafruit_LiquidCrystal {
 	
 	public:
-	Technoshield_ui( unsigned int lcdA1, unsigned int lcdA0, unsigned int butLedA1, unsigned int butLedA0);
-	Technoshield_ui( unsigned int ldcSubAddr = 0, unsigned int butLedSubAddr = 0);
+	Technoshield_ui( uint8_t lcdA1, uint8_t lcdA0, uint8_t butLedA1, uint8_t butLedA0);
+	Technoshield_ui( uint8_t ldcSubAddr = 0, uint8_t butLedSubAddr = 0);
 	void begin();
 	uint8_t isButtonPressed( uint8_t button);
 	void setLedState( uint8_t led, uint8_t state);
